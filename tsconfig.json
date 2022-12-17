@@ -2,5 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs"
+    //"noImplicitAny": true,  <-- any라는 타입이 의도치않게 발생하면 에러를 띄워줌
+    //"strictNullChecks": true <-- null, undefined 타입에 이상한 조작하면 에러를 띄움
   }
 }

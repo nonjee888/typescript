@@ -22,3 +22,27 @@ var User = /** @class */ (function () {
 }());
 // class도 타입지정 가능
 // 중괄호 내에 미리 name이란 변수 만들어야 constructor 안에서 this.name 이렇게 사용이 가능
+// undefined, null 타입도 있다
+var 회원들 = ["Kim", "Lee"];
+// 문자만 담긴 array만 가능
+var 회원들2 = {
+    member1: "kim",
+    member2: "park",
+};
+//타입지정 원래 자동으로 됨...타입지정 문법 생략 가능하다
+/* 예제 */
+// 1. 이름, 나이, 출생지역
+var 내이름 = "노은지";
+var 내나이 = 35;
+var 내고향 = "제천";
+// 2. 내가 좋아하는 곡, 가수이름을 object 자료형으로
+var myMusic = {
+    song: "우리가 맞다는 대답을 할거예요",
+    musician: "이강승",
+};
+// 3. 다음과 같은 자료의 타입 지정을 해보아라
+var project = {
+    member: ["kim", "park"],
+    days: 30,
+    started: true,
+};
