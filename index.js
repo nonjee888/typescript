@@ -215,11 +215,43 @@ function subject(x) {
         console.log(x.subject[x.subject.length - 1]);
         return x.subject[x.subject.length - 1];
     }
-    else {
+    else if (x.subject === "string") {
         console.log(x.subject);
         return x.subject;
+    }
+    else {
+        return "없으";
     }
 }
 subject({ subject: ["math", "science"] });
 subject({ subject: "math" });
 console.log(subject({ hello: "hi" }));
+var 동물 = 123;
+var 동물2 = { name: "kim", age: 20 };
+// const 변수는 재할당이 불가능
+var 출생지역 = "seoul";
+출생지역 = "busan";
+// cosnt 변수라도 object 자료수정 가능
+var 출생지역2 = { region: "seoul" };
+출생지역2.region = "busan";
+var 여친 = {
+    name: "엠버",
+};
+여친.name = "은지";
+var position = { x: 10, y: 20 };
+var 테스트용 = {
+    //   color: "blue",
+    size: 123,
+    position: [1, 2, 3],
+};
+var data = {
+    name: "eunji",
+    phone: 123,
+    email: "nah234@gmail.com",
+};
+var newOne = {
+    name: "웅",
+    phone: 111,
+    email: "1212@ddd.com",
+    minor: false,
+};
