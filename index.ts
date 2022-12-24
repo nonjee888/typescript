@@ -429,3 +429,56 @@ function 내함수(a: "kim") {}
 // 1) 타입을 object의 value로 바꿔준다
 // 2) object안에 있는 모든 속성을 readonly로 바꿔준다(변경하면 에러나게)
 // object를 잠그고 싶으면 as const를 사용하쟈
+
+/* 함수 type 지정하기 */
+type 함수타입 = (a: string) => number;
+// 1. 함수타입은 () => {} 모양으로
+
+let 함수12: 함수타입 = function (a) {
+  return 10;
+};
+// 2. 함수표현식에만 type alias 사용가능
+
+/* 퀴즈 */
+// 1. object안의 함수 타입지정은 어떻게?
+type 회원정보 = {
+  name: string;
+  age: number;
+  plusOne: (a: number) => number;
+  changeName: () => void;
+};
+
+let 회원정보: 회원정보 = {
+  name: "kim",
+  age: 20,
+  plusOne(a) {
+    return a + 1;
+  },
+  changeName: () => {
+    console.log("ddong");
+  },
+};
+
+회원정보.plusOne(3);
+회원정보.changeName();
+
+// 2. 다음 함수2개를 만들어보고 타입까지 정의해보십시오.
+// cutZero()라는 함수를 만듭시다. 이 함수는 문자를 하나 입력하면 맨 앞에 '0' 문자가 있으면 제거하고 문자 type으로 return 해줍니다.
+// removeDash()라는 함수를 만듭시다. 이 함수는 문자를 하나 입력하면 대시기호 '-' 가 있으면 전부 제거해주고 그걸 숫자 type으로 return 해줍니다.
+// 함수에 타입지정시 type alias를 꼭 써보도록 합시다.
+
+type cutZero = (a: string) => string;
+
+let cutZero: cutZero = (a) => {
+  return a.replace("0", "");
+};
+
+console.log(cutZero("012223"));
+
+type removeDash = (a: string) => number;
+let removeDash: removeDash = (a) => {
+  let dashremoved = a.replace("-", "");
+  return parseFloat(dashremoved);
+};
+
+console.log(removeDash("-4dkdkd222k123123"));

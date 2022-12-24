@@ -276,12 +276,28 @@ var 자료 = {
 // console.log(자료.name)은 "kim"이 나온다. 그런데 아래 내함수(자료.name)은 에러를 뱉어낸다
 function 내함수(a) { }
 내함수(자료.name);
-// 오ㅐ냐면 "kim"이란 자료가 아닌 "kim"이라는 타입만 들어올 수 있기 때문
-// 해결방법
-// 1. object 만들 때 타입을 잘 정해
-// 2. as 문법
-// 3. as const 문법
-// var 자료에 as const를 뒤에 붙이면
-// 1) 타입을 object의 value로 바꿔준다
-// 2) object안에 있는 모든 속성을 readonly로 바꿔준다(변경하면 에러나게)
-// object를 잠그고 싶으면 as const를 사용하쟈
+// 1. 함수타입은 () => {} 모양으로
+var 함수12 = function (a) {
+    return 10;
+};
+var 회원정보 = {
+    name: "kim",
+    age: 20,
+    plusOne: function (a) {
+        return a + 1;
+    },
+    changeName: function () {
+        console.log("ddong");
+    },
+};
+회원정보.plusOne(3);
+회원정보.changeName();
+var cutZero = function (a) {
+    return a.replace("0", "");
+};
+console.log(cutZero("012223"));
+var removeDash = function (a) {
+    var dashremoved = a.replace("-", "");
+    return parseFloat(dashremoved);
+};
+console.log(removeDash("-4dkdkd222k123123"));
