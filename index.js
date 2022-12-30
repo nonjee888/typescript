@@ -301,3 +301,26 @@ var removeDash = function (a) {
     return parseFloat(dashremoved);
 };
 console.log(removeDash("-4dkdkd222k123123"));
+// 타입스크립트로 HTML 변경과 조작할때 주의점
+var 제목 = document.querySelector("#title");
+if (제목 instanceof HTMLElement) {
+    제목.innerHTML = "반가워요";
+}
+console.log(제목);
+// HTML 조작시 narrowing 방법 5개
+// 1. if(제목 != null){}
+// 2. if(제목 instanceof HTMLElement){}  <-- 가장 많이 쓰임
+// 3. let 제목 = document.querySelector("#title") as Element; //비상시, 100%확신할 때만 씀.
+// 4. if(제목?.innerHTML != undefined){} <-- 제목에 innerHTML이 있으면 출력해주고 없으면 undefined (optional chaning)
+// 5. tsconfig.json 에서 strict모드 false로 바꿈 <-- typescript 안쓰겠다는 것임
+// <a>태그의 href 속성 바꾸기
+var 링크 = document.querySelector(".link");
+if (링크 instanceof HTMLAnchorElement) {
+    링크.href = "https://kakao.com";
+}
+// HTMLHeadingElement, HTMLButtonElement, HTMLAnchorElement 등 Heading, Button 등의 태그를 describe 하기 위한 Element 타입들이 있음
+// HTMLAnchorElement는 href, style, class 이런거 쓸 수 있음
+// 타입스크립트에서 eventListener 부착하기
+var 버튼 = document.querySelector("#button");
+버튼 === null || 버튼 === void 0 ? void 0 : 버튼.addEventListener("click", function () { });
+// 버튼?. 도 narrowing <-- 버튼에 addEventListener 가능하면 해주고 아니면 undefined
