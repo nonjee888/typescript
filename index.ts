@@ -528,6 +528,8 @@ let 링크2 = document.querySelectorAll(".naver");
     a.href = "https://kakao.com";
   }
 });
+// querySelectorAll() 셀렉터를 쓰면 많은 요소를 한번에 찾을 수 있다.
+// forEach 반복문 이용해 찾은 요소마다 각각 href 속성을 변경해줌.
 
 // for 반복문 쓸 경우
 // let 링크2 = document.querySelectorAll(".naver");
