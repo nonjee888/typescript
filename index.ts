@@ -523,8 +523,17 @@ if (이미지 instanceof HTMLImageElement) {
 // <a>태그 href속성을 전부 kakao.com으로 바꿔보기
 
 let 링크2 = document.querySelectorAll(".naver");
-링크2.forEach(() => {
-  if (링크2 instanceof HTMLAnchorElement) {
-    링크2.href = "https://kakao.com";
+링크2.forEach((a) => {
+  if (a instanceof HTMLAnchorElement) {
+    a.href = "https://kakao.com";
   }
 });
+
+// for 반복문 쓸 경우
+// let 링크2 = document.querySelectorAll(".naver");
+// for (let i = 0; i < 3; i++) {
+//   let a = 링크2[i];
+//   if (a instanceof HTMLAnchorElement) {
+//     a.href = "https://kakao.com";
+//   }
+// }
