@@ -324,3 +324,18 @@ if (링크 instanceof HTMLAnchorElement) {
 var 버튼 = document.querySelector("#button");
 버튼 === null || 버튼 === void 0 ? void 0 : 버튼.addEventListener("click", function () { });
 // 버튼?. 도 narrowing <-- 버튼에 addEventListener 가능하면 해주고 아니면 undefined
+/* 숙제 */
+// 1. 버튼을 누르면 이미지를 바꾸기
+// html안 이미지를 new.jpg로 바꾸고 싶다면?
+var 이미지 = document.querySelector("#image");
+if (이미지 instanceof HTMLImageElement) {
+    이미지.src = "new.jpg";
+}
+// 2. 바꾸고 싶은 요소가 많을 때
+// <a>태그 href속성을 전부 kakao.com으로 바꿔보기
+var 링크2 = document.querySelectorAll(".naver");
+링크2.forEach(function () {
+    if (링크2 instanceof HTMLAnchorElement) {
+        링크2.href = "https://kakao.com";
+    }
+});
